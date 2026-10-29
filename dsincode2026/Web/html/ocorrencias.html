@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocorrências | F.O.G.O</title>
+    <link rel="stylesheet" href="../css/ocorrencias.css">
+</head>
+<body>
+
+<header class="cabecalho">
+    <h1>Ocorrências</h1>
+    <p>CENTRAL DE NOTIFICAÇÕES E OCORRÊNCIAS</p>
+</header>
+
+<nav class="navegacao">
+    <a href="bemvindo.html">Início</a>
+    <a href="central.html">Central</a>
+    <a href="agentes.html">Agentes</a>
+    <a href="equipamentos.html">Equipamentos</a>
+    <a href="ocorrencias.html" class="ativo">Ocorrências</a>
+    <a href="veiculos.html">Veículos</a>
+</nav>
+
+<main class="conteudo">
+
+    <section class="resumo">
+        <div class="indicador">
+            <span>Total de notificações</span>
+            <strong id="total">0</strong>
+        </div>
+
+        <div class="indicador">
+            <span>Multas</span>
+            <strong id="multas">0</strong>
+        </div>
+
+        <div class="indicador">
+            <span>Alertas críticos</span>
+            <strong id="criticos">0</strong>
+        </div>
+    </section>
+
+    <div class="titulo-lista">
+        <div>
+            <h2>Central de ocorrências</h2>
+            <p>Registros do monitoramento urbano.</p>
+        </div>
+
+        <button id="limpar" class="botao-limpar">
+            Limpar notificações
+        </button>
+    </div>
+
+    <section id="listaOcorrencias" class="lista-ocorrencias"></section>
+
+</main>
+
+<script src="../js/ocorrencias.js"></script>
+</body>
+</html>

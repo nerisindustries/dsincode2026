@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estacionamento | NerisMachines</title>
+    <link rel="stylesheet" href="../css/estcionamento.css">
+    <script src="../js/estacionamento.js" defer></script>
+</head>
+<body>
+
+    <header class="topo">
+        <h1>Estacionamento</h1>
+        <h2>Central de controle de estacionamento</h2>
+    </header>
+
+    <main class="container">
+
+        <section class="painel">
+            <h3>Consultar veículo</h3>
+            <p class="descricao">
+                Digite o código do veículo para consultar os dados e controlar o estacionamento.
+            </p>
+
+            <form id="formPesquisa">
+                <label for="codigoPesquisa">Código do veículo</label>
+
+                <div class="linha-formulario">
+                    <input
+                        type="text"
+                        id="codigoPesquisa"
+                        placeholder="Ex.: 002"
+                        maxlength="3"
+                        required
+                    >
+
+                    <button type="submit">Consultar</button>
+                </div>
+            </form>
+
+            <p class="aviso">
+                Entrada: 5 pontos. Permanência: 10 pontos por minuto simulado.
+            </p>
+        </section>
+
+        <section class="resultado">
+            <h3>Dados do veículo</h3>
+
+            <div id="cartaoVeiculo" class="cartao-vazio">
+                <p>Pesquise um código para visualizar o cartão do veículo.</p>
+            </div>
+
+            <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="painel painel-oficial">
+            <h3>Painel oficial</h3>
+            <p class="descricao">
+                Utilize este formulário para adicionar pontos à conta de um veículo.
+            </p>
+
+            <form id="formRecarga">
+                <label for="codigoRecarga">Código do veículo</label>
+                <input
+                    type="text"
+                    id="codigoRecarga"
+                    placeholder="Ex.: 002"
+                    maxlength="3"
+                    required
+                >
+
+                <label for="quantidadeRecarga">Quantidade de pontos</label>
+                <input
+                    type="number"
+                    id="quantidadeRecarga"
+                    min="1"
+                    step="1"
+                    placeholder="Digite a quantidade"
+                    required
+                >
+
+                <button type="submit">Adicionar pontos</button>
+            </form>
+
+            <p class="aviso">
+                Área demonstrativa para fins escolares.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+      
+    </footer>
+
+</body>
+</html>

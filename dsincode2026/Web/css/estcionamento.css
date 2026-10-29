@@ -1,0 +1,502 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #080f1b;
+    color: #e8f4ff;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.topo {
+    padding: 28px 5%;
+    background: #07101e;
+    border-bottom: 1px solid #153654;
+}
+
+.topo h1 {
+    margin: 0;
+    color: #e8f4ff;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.topo h2 {
+    margin: 8px 0 0;
+    color: #819dbb;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 35px 5%;
+}
+
+.painel,
+.resultado {
+    margin-bottom: 25px;
+    padding: 22px;
+    background: #0d192a;
+    border: 1px solid #183652;
+    border-radius: 10px;
+}
+
+.painel h3,
+.resultado h3 {
+    margin: 0 0 18px;
+    color: #28b9ff;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.descricao {
+    margin: 0 0 20px;
+    color: #8ca6c5;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* FORMULÁRIOS */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    color: #9eb1c8;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    background: #080f1b;
+    color: #e8f4ff;
+    border: 1px solid #24425f;
+    border-radius: 5px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #28b9ff;
+}
+
+.linha-formulario {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    padding: 12px 18px;
+    background: #102035;
+    color: #28b9ff;
+    border: 1px solid #31516e;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #17314c;
+    border-color: #28b9ff;
+}
+
+.linha-formulario input {
+    flex: 1;
+}
+
+.linha-formulario button {
+    flex-shrink: 0;
+}
+
+.aviso {
+    margin: 18px 0 0;
+    color: #819dbb;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+
+.cartao-vazio {
+    padding: 24px;
+    color: #819dbb;
+    background: #080f1b;
+    border: 1px dashed #24425f;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cartao-vazio p {
+    margin: 0;
+}
+
+.cartao-veiculo {
+    overflow: hidden;
+    background: #080f1b;
+    border: 1px solid #183652;
+    border-radius: 8px;
+}
+
+
+
+.cabecalho-cartao {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #183652;
+}
+
+.identificacao {
+    flex: 1;
+    min-width: 0;
+}
+
+.codigo-veiculo {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 9px;
+    color: #28b9ff;
+    background: #102035;
+    border: 1px solid #24425f;
+    border-radius: 4px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.identificacao h4 {
+    margin: 0 0 8px;
+    color: #e8f4ff;
+    font-size: 20px;
+    overflow-wrap: anywhere;
+}
+
+.identificacao .proprietario {
+    margin: 0;
+    color: #9eb1c8;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.foto-proprietario {
+    flex-shrink: 0;
+    width: 105px;
+    text-align: center;
+}
+
+.foto-proprietario img {
+    display: block;
+    width: 105px;
+    height: 105px;
+    object-fit: cover;
+    background: #0d192a;
+    border: 1px solid #31516e;
+    border-radius: 6px;
+}
+
+.foto-proprietario span,
+.rotulo-foto {
+    display: block;
+    margin-top: 7px;
+    color: #819dbb;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.conteudo-veiculo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 190px;
+    gap: 22px;
+    align-items: center;
+    padding: 20px;
+}
+
+.dados-veiculo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.dado {
+    padding: 12px;
+    background: #0d192a;
+    border: 1px solid #183652;
+    border-radius: 5px;
+    min-width: 0;
+}
+
+.dado span {
+    display: block;
+    margin-bottom: 7px;
+    color: #819dbb;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.dado strong {
+    display: block;
+    color: #e8f4ff;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.foto-veiculo {
+    width: 100%;
+    text-align: center;
+}
+
+.foto-veiculo img {
+    display: block;
+    width: 100%;
+    height: 125px;
+    object-fit: contain;
+    background: #0d192a;
+    border: 1px solid #183652;
+    border-radius: 6px;
+}
+
+.foto-indisponivel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 105px;
+    padding: 10px;
+    color: #819dbb;
+    background: #0d192a;
+    border: 1px dashed #31516e;
+    border-radius: 6px;
+    font-size: 11px;
+    text-align: center;
+}
+
+/* PONTOS E ESTACIONAMENTO */
+
+.area-pontos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0 20px 20px;
+}
+
+.info-ponto {
+    flex: 1;
+    min-width: 130px;
+    padding: 14px;
+    background: #0d192a;
+    border: 1px solid #183652;
+    border-radius: 5px;
+}
+
+.info-ponto span {
+    display: block;
+    margin-bottom: 7px;
+    color: #819dbb;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.info-ponto strong {
+    color: #28b9ff;
+    font-size: 20px;
+}
+
+.status {
+    margin: 0 20px 18px;
+    padding: 10px 12px;
+    background: #0d192a;
+    border: 1px solid #24425f;
+    border-radius: 5px;
+    color: #9eb1c8;
+    font-size: 12px;
+}
+
+.status.ativo {
+    color: #00ff66;
+    border-color: #17643c;
+}
+
+.status.erro {
+    color: #ff4e67;
+    border-color: #743344;
+}
+
+.acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 20px 20px;
+}
+
+.acoes button {
+    flex: 1;
+    min-width: 150px;
+}
+
+.botao-estacionar {
+    color: #00ff66;
+    border-color: #17643c;
+}
+
+.botao-estacionar:hover {
+    background: #102b25;
+    border-color: #00ff66;
+}
+
+.botao-sair {
+    color: #ff4e67;
+    border-color: #743344;
+}
+
+.botao-sair:hover {
+    background: #301722;
+    border-color: #ff4e67;
+}
+
+button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* MENSAGENS */
+
+.mensagem {
+    margin: 16px 0 0;
+    color: #28b9ff;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.mensagem:empty {
+    display: none;
+}
+
+.mensagem.sucesso {
+    color: #00ff66;
+}
+
+.mensagem.erro {
+    color: #ff4e67;
+}
+
+/* PAINEL OFICIAL */
+
+.painel-oficial form {
+    max-width: 450px;
+}
+
+.painel-oficial button {
+    margin-top: 8px;
+}
+
+/* RODAPÉ */
+
+.rodape {
+    padding: 22px 5%;
+    background: #07101e;
+    border-top: 1px solid #153654;
+    text-align: center;
+}
+
+.rodape p {
+    margin: 0;
+    color: #819dbb;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 650px) {
+    .container {
+        padding: 22px 4%;
+    }
+
+    .painel,
+    .resultado {
+        padding: 16px;
+    }
+
+    .linha-formulario {
+        flex-direction: column;
+    }
+
+    .linha-formulario button {
+        width: 100%;
+    }
+
+    .cabecalho-cartao {
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .identificacao h4 {
+        font-size: 16px;
+    }
+
+    .foto-proprietario,
+    .foto-proprietario img {
+        width: 82px;
+    }
+
+    .foto-proprietario img {
+        height: 82px;
+    }
+
+    .conteudo-veiculo {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .dados-veiculo {
+        gap: 10px;
+    }
+
+    .foto-veiculo {
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+    .foto-veiculo img {
+        height: 125px;
+    }
+
+    .area-pontos {
+        padding: 0 15px 15px;
+    }
+
+    .acoes {
+        padding: 0 15px 15px;
+    }
+
+    .acoes button {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .dados-veiculo {
+        grid-template-columns: 1fr;
+    }
+
+    .topo h1 {
+        font-size: 21px;
+    }
+}
