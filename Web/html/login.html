@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F.O.G.O. - Autenticação</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+
+    <div class="login-box">
+        <div class="login-header">
+            <h2>AUTENTICAÇÃO F.O.G.O.</h2>
+            <p>Segurança PROMETHEUS</p>
+        </div>
+        
+        <form id="formLogin">
+            <div class="input-group">
+                <label>ID OPERADOR</label>
+                <input type="text" id="usuario" placeholder="Ex: admin" required autocomplete="off">
+            </div>
+            
+            <div class="input-group">
+                <label>CHAVE CRIPTOGRÁFICA</label>
+                <input type="password" id="senha" placeholder="••••••••" required>
+            </div>
+            
+            <button type="submit" class="btn-submit">INICIALIZAR PAINEL</button>
+        </form>
+        
+        <div id="loginErro" class="error-msg hidden">
+          ACESSO NEGADO: CREDENCIAIS INVÁLIDAS.
+        </div>
+    </div>
+
+    <script src="/js/login.js"></script>
+</body>
+</html>

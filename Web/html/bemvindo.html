@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F.O.G.O. - Bem-vindo</title>
+    
+    <link rel="stylesheet" href="/css/bemvindo.css">
+</head>
+<body>
+
+    
+    <div id="landingScreen" class="landing-container">
+        <div class="landing-content">
+            <h1>PROMETHEUS</h1>
+            <p>Bem-vindo ao nosso espaço. Somos movidos pela preocupação com a sua seguraça aliada à inovção e tecnologia. </p>
+            <button id="startBtn" class="start-btn">Saber Mais</button>
+        </div>
+    </div>
+
+    <!-- TELA 2: INTRODUÇÃO EM VÍDEO -->
+    <div id="videoScreen" class="video-screen">
+        <div class="video-container">
+            <video id="introVideo" playsinline>
+                <source src="intro.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+        </div>
+
+        <div class="skip-container">
+            <div class="skip-text">Segure ESPAÇO para pular</div>
+            <div class="progress-bar-bg">
+                <div id="progressBar" class="progress-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/bemvindo.js"></script>
+</body>
+</html>

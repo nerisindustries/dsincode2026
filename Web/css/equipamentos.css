@@ -1,0 +1,245 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080f1b;
+    color: #e8f4ff;
+    font-family: Arial, sans-serif;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 28px 5%;
+    background: #0b1424;
+    border-bottom: 1px solid #123d67;
+}
+
+.cabecalho h1 {
+    color: #ffffff;
+    letter-spacing: 3px;
+    
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.cabecalho p {
+    color: #829ab8;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.status-sistema,
+.status-agente {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #00e5b0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.ponto-online {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: #00e5a0;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00e5a0;
+    flex-shrink: 0;
+}
+
+
+
+
+.navegacao {
+     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 16px 0;
+    padding: 12px;
+    border: 1px solid rgba(0, 195, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(5, 15, 30, 0.8);
+    max-width: 1735px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}   
+
+.navegacao a {
+   color: #9cb9d4;
+    text-decoration: none;
+    padding: 10px 14px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.navegacao a:hover,
+.navegacao a.ativo {
+      color: #00c3ff;
+    border-color: #00c3ff;
+    background: rgba(0, 195, 255, 0.08);
+}
+
+.conteudo {
+    
+    padding: 35px 5%;
+}
+
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.resumo div {
+    background: #0d192a;
+    border: 1px solid #183652;
+    border-radius: 10px;
+    padding: 22px;
+}
+
+.resumo span {
+    display: block;
+    color: #8ca6c5;
+    font-size: 13px;
+}
+
+.resumo strong {
+    display: block;
+    margin-top: 10px;
+    color: #28b9ff;
+    font-size: 30px;
+}
+
+.conteudo h2 {
+    color: #28b9ff;
+    margin-bottom: 8px;
+}
+
+.descricao {
+    color: #8ca6c5;
+    margin-bottom: 25px;
+}
+
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    overflow: hidden;
+    background: #0d192a;
+    border: 1px solid #183652;
+    border-radius: 12px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #28b9ff;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    padding: 12px;
+    background: #08111f;
+}
+
+.card-conteudo {
+    padding: 20px;
+}
+
+.categoria {
+    color: #28b9ff;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.card h3 {
+    margin: 10px 0 16px;
+    font-size: 19px;
+}
+
+.card p {
+    margin: 10px 0;
+    color: #9eb1c8;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.card p b {
+    color: #e8f4ff;
+}
+
+.status {
+    display: block;
+    margin: 18px 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status.ativo {
+    color: #00e6a0;
+}
+
+.status.manutencao {
+    color: #ffb547;
+}
+
+.card button {
+    width: 100%;
+    padding: 12px;
+    background: #102943;
+    border: 1px solid #168bff;
+    border-radius: 6px;
+    color: #48c6ff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.card button:hover {
+    background: #168bff;
+    color: white;
+}
+.mapa-section {
+    margin: 35px 0;
+    padding: 24px;
+    background: #0d192a;
+    border: 1px solid #183652;
+    border-radius: 12px;
+}
+
+.mapa-section h2 {
+    margin-bottom: 20px;
+    color: #28b9ff;
+}
+
+.mapa-imagem {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #183652;
+}
+@media (max-width: 600px) {
+    .resumo {
+        grid-template-columns: 1fr;
+    }
+
+    .conteudo {
+        padding: 25px 4%;
+    }
+}

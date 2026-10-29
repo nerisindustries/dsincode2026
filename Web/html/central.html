@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F.O.G.O. - Central de Comando Urbano</title>
+    <link rel="stylesheet" href="../css/central.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div>
+                <h1>F.O.G.O. // CENTRAL DE COMANDO URBANO</h1>
+                <div class="sub-status">
+                    <span class="pulse-icon"></span>
+                    <small>IA PROMETHEUS ATIVA | OPERADOR: <span id="nomeOperador">OPROTETOR</span></small>
+                </div>
+            </div>
+            <div class="serial-controls">
+                <button class="btn-serial" id="btnConectarRadares">CONECTAR RADARES</button>
+                <button class="btn-serial" id="btnConectarSemaforos">CONECTAR SEMÁFOROS</button>
+            </div>
+        </header>
+
+        <nav class="dashboard-nav">
+            
+<nav class="navegacao">
+    <a href="bemvindo.html">Início</a>
+    <a href="central.html" class="ativo">Central</a>
+    <a href="agentes.html">Agentes</a>
+    <a href="equipamentos.html">Equipamentos</a>
+    <a href="ocorrencias.html">Ocorrências</a>
+    <a href="veiculos.html">Veículos</a>
+</nav>
+
+        </nav>
+
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <h3>DISPOSITIVOS URBANOS</h3>
+                <p id="kpiAtivos" class="txt-neon-azul">0 / 3</p>
+                <small>RADARES, SEMÁFOROS E CÂMERA</small>
+            </div>
+
+            <div class="kpi-card">
+                <h3>INFRAÇÕES DETECTADAS</h3>
+                <p id="kpiMultas" class="txt-neon-vermelho">0</p>
+                <small>ACUMULADO DO TURNO</small>
+            </div>
+
+            <div class="kpi-card">
+                <h3>FROTA REGISTRADA</h3>
+                <p class="txt-neon-azul">3</p>
+                <small>VEÍCULOS DE MORADORES</small>
+            </div>
+
+            <div class="kpi-card">
+                <h3>SINAL DO SEMÁFORO</h3>
+                <p id="statusSemaforo" class="txt-neon-vermelho">AGUARDANDO</p>
+                <small id="subSemaforo">CÓDIGO: SEM-CRUZ-99</small>
+            </div>
+        </section>
+
+        <main class="content-grid">
+            <div class="panel-card chart-panel">
+                <h2>ANÁLISE DE SATURAÇÃO POR VIA</h2>
+                <div class="charts-wrapper">
+                    <div class="chart-item">
+                        <div class="circular-chart" id="chartR1">
+                            <div class="chart-center">
+                                <span id="txtChartR1">0%</span>
+                            </div>
+                        </div>
+                        <span class="chart-label">
+                            Av. República<br>
+                            <small>RADAR 1 | SR. OSCAR</small>
+                        </span>
+                    </div>
+
+                    <div class="chart-item">
+                        <div class="circular-chart" id="chartR2">
+                            <div class="chart-center">
+                                <span id="txtChartR2">0%</span>
+                            </div>
+                        </div>
+                        <span class="chart-label">
+                            Rua Alvorada<br>
+                            <small>RADAR 2 | SYDNEY</small>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-card camera-panel">
+                <h2>SISTEMA DE MONITORAMENTO </h2>
+
+                
+
+                <div class="camera-status">
+                    <span>STATUS DA CÂMERA:</span>
+                    <strong id="statusCamera" class="txt-neon-vermelho">SEM RESPOSTA</strong>
+                </div>
+
+                <div class="camera-preview">
+                    <img
+    src="http://127.0.0.1:5000/stream"
+    alt="Transmissão do VMS"
+    style="width: 100%; height: 100%; object-fit: contain;"
+>
+                    <span class="camera-placeholder">AGUARDANDO TRANSMISSÃO</span>
+                </div>
+
+                <button class="btn-serial camera-button" id="btnConectarCamera">
+                    CONECTAR CÂMERA
+                </button>
+            </div>
+
+            <div class="panel-card log-panel">
+                <h2>TERMINAL O.N.I.S.C.I.E.N.T.E.</h2>
+                <div class="log-terminal" id="painelAlertas">
+                    <div class="log-line text-muted">> Barramento seguro pronto. Aguardando sincronização de hardware...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/central.js"></script>
+</body>
+</html>

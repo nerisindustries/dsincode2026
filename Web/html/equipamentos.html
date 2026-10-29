@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipamentos | NerisMachines</title>
+    <link rel="stylesheet" href="../css/equipamentos.css">
+</head>
+<body>
+ <header class="cabecalho">
+        <div>
+            <h1>Equipamentos</h1>
+            <p>Central Integrada de Monitoramento Urbano</p>
+        </div>
+
+        <div class="status-sistema">
+            <span class="ponto-online"></span>
+            SISTEMA ONLINE
+        </div>
+    </header>
+
+
+<nav class="navegacao">
+    <a href="bemvindo.html">Início</a>
+    <a href="central.html">Central</a>
+    <a href="agentes.html">Agentes</a>
+    <a href="equipamentos.html" class="ativo">Equipamentos</a>
+    <a href="ocorrencias.html">Ocorrências</a>
+    <a href="veiculos.html">Veículos</a>
+</nav>
+
+<main class="conteudo">
+
+    <section class="resumo">
+        <div>
+            <span>Equipamentos cadastrados</span>
+            <strong id="total">6</strong>
+        </div>
+        <div>
+            <span>Ativos</span>
+            <strong id="ativos">6</strong>
+        </div>
+        <div>
+            <span>Em manutenção</span>
+            <strong id="manutencao">0</strong>
+        </div>
+    </section>
+
+    <h2>Inventário de equipamentos</h2>
+    <p class="descricao">
+        Acompanhe o estado dos dispositivos de monitoramento urbano.
+    </p>
+
+    <section class="catalogo" id="catalogo">
+
+        <article class="card" data-nome="Câmera 01">
+            <img src="../img/equipamentos/camera.jpeg" alt="Câmera 01">
+            <div class="card-conteudo">
+                <span class="categoria">MONITORAMENTO</span>
+                <h3>Câmera 01</h3>
+                <p><b>ID:</b> CAM-001</p>
+                <p><b>Local:</b> Parque dos Pinheiros</p>
+                <p><b>Função:</b> Monitoramento por vídeo</p>
+                <span class="status ativo">● ATIVO</span>
+                <button onclick="alternarEstado(this)">Registrar manutenção</button>
+            </div>
+        </article>
+
+       
+        
+
+        <article class="card" data-nome="Radar">
+            <img src="../img/equipamentos/radar1.jpeg" alt="Radar">
+            <div class="card-conteudo">
+                <span class="categoria">FISCALIZAÇÃO</span>
+                <h3>Radar de velocidade</h3>
+                <p><b>ID:</b> RAD-002</p>
+                <p><b>Local:</b> Rua Alvorada</p>
+                <p><b>Função:</b> Monitoramento de velocidade</p>
+                <span class="status ativo">● ATIVO</span>
+                <button onclick="alternarEstado(this)">Registrar manutenção</button>
+            </div>
+        </article>
+         <article class="card" data-nome="Radar">
+            <img src="../img/equipamentos/radar2.jpeg" alt="Radar">
+            <div class="card-conteudo">
+                <span class="categoria">FISCALIZAÇÃO</span>
+                <h3>Radar de velocidade</h3>
+                <p><b>ID:</b> RAD-001</p>
+                <p><b>Local:</b> Av. República</p>
+                <p><b>Função:</b> Monitoramento de velocidade</p>
+                <span class="status ativo">● ATIVO</span>
+                <button onclick="alternarEstado(this)">Registrar manutenção</button>
+            </div>
+        </article>
+
+        <article class="card" data-nome="Semáforo 01">
+            <img src="../img/equipamentos/semaforo1.jpeg" alt="Semáforo 01">
+            <div class="card-conteudo">
+                <span class="categoria">SINALIZAÇÃO</span>
+                <h3>Semáforo 01</h3>
+                <p><b>ID:</b> SEM-001</p>
+                <p><b>Local:</b> Cruzamento Alvorada / República</p>
+                <p><b>Função:</b> Controle do fluxo de veículos</p>
+                <span class="status ativo">● ATIVO</span>
+                <button onclick="alternarEstado(this)">Registrar manutenção</button>
+            </div>
+        </article>
+
+        <article class="card" data-nome="Semáforo 02">
+            <img src="../img/equipamentos/semaforo2.jpeg" alt="Semáforo 02">
+            <div class="card-conteudo">
+                <span class="categoria">SINALIZAÇÃO</span>
+                <h3>Semáforo 02</h3>
+                <p><b>ID:</b> SEM-002</p>
+                <p><b>Local:</b> Cruzamento Alvorada / República</p>
+                <p><b>Função:</b> Controle do fluxo de veículos</p>
+                <span class="status ativo">● ATIVO</span>
+                <button onclick="alternarEstado(this)">Registrar manutenção</button>
+            </div>
+        </article>
+
+
+    </section>
+    <section class="mapa-section">
+    <h2>Mapa dos Oficiais e Equipamentos</h2>
+
+    <img src="/img/{50A0CA23-77E5-4E6F-9866-36ED620786B3}.png"
+         alt="Mapa dos oficiais e equipamentos"
+         class="mapa-imagem">
+</section>
+</main>
+
+<script>
+function atualizarResumo() {
+    const cards = document.querySelectorAll(".card");
+    const ativos = document.querySelectorAll(".status.ativo").length;
+    const manutencao = document.querySelectorAll(".status.manutencao").length;
+
+    document.getElementById("total").textContent = cards.length;
+    document.getElementById("ativos").textContent = ativos;
+    document.getElementById("manutencao").textContent = manutencao;
+}
+
+function alternarEstado(botao) {
+    const card = botao.closest(".card");
+    const status = card.querySelector(".status");
+    const nome = card.dataset.nome;
+
+    if (status.classList.contains("ativo")) {
+        const confirmar = confirm(
+            "Deseja registrar " + nome + " em manutenção?"
+        );
+
+        if (!confirmar) return;
+
+        status.className = "status manutencao";
+        status.textContent = "● EM MANUTENÇÃO";
+        botao.textContent = "Marcar como ativo";
+
+        registrarOcorrencia(nome);
+    } else {
+        const confirmar = confirm(
+            "Deseja marcar " + nome + " como ativo novamente?"
+        );
+
+        if (!confirmar) return;
+
+        status.className = "status ativo";
+        status.textContent = "● ATIVO";
+        botao.textContent = "Registrar manutenção";
+
+        registrarOcorrencia(nome, true);
+    }
+
+    atualizarResumo();
+}
+
+function registrarOcorrencia(nome, resolvida = false) {
+    const chave = "neris_ocorrencias";
+    let ocorrencias = JSON.parse(localStorage.getItem(chave) || "[]");
+
+    const existente = ocorrencias.find(
+        item => item.equipamento === nome && !item.resolvida
+    );
+
+    if (resolvida) {
+        if (existente) {
+            existente.resolvida = true;
+            existente.dataResolucao = new Date().toLocaleString("pt-BR");
+        } else {
+            ocorrencias.unshift({
+                equipamento: nome,
+                mensagem: "Equipamento voltou ao estado ativo.",
+                data: new Date().toLocaleString("pt-BR"),
+                resolvida: true
+            });
+        }
+    } else if (!existente) {
+        ocorrencias.unshift({
+            equipamento: nome,
+            mensagem: "Equipamento encaminhado para manutenção.",
+            data: new Date().toLocaleString("pt-BR"),
+            resolvida: false
+        });
+    }
+
+    localStorage.setItem(chave, JSON.stringify(ocorrencias));
+}
+
+atualizarResumo();
+</script>
+
+</body>
+</html>
